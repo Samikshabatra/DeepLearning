@@ -11,7 +11,7 @@ The experiments focus on understanding **neural network fundamentals**, **traini
 - To implement **Multi-Layer Perceptrons (MLP)** and **Deep Feedforward Neural Networks**
 - To study the role of **activation functions, loss functions, and optimizers**
 - To analyze the impact of **hyperparameters** such as learning rate, batch size, depth, and width
-- To gain practical experience using **PyTorch** and **TensorFlow**
+- To gain practical experience using **PyTorch**, **Keras** and **TensorFlow**
 
 ---
 
