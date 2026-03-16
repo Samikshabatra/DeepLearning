@@ -1,123 +1,120 @@
-# Lab 4.2: Text Classification using RNN and LSTM
+# Lab 4.2: Object Detection using YOLO
 
 ## Overview
 
-This experiment demonstrates the implementation of Recurrent Neural Networks (RNN) and Long Short-Term Memory (LSTM) networks for text classification tasks.
+This experiment demonstrates **object detection using the YOLO (You Only Look Once) algorithm**, one of the most efficient real-time object detection models in computer vision.
 
-Unlike traditional machine learning models, recurrent neural networks are designed to handle **sequential data**, making them particularly useful for Natural Language Processing (NLP) applications.
+Unlike traditional object detection methods that scan images multiple times, YOLO processes the entire image in a single forward pass through a neural network. This enables fast and accurate detection of multiple objects within an image.
 
-In this lab, text data is preprocessed, converted into numerical sequences, and used to train RNN/LSTM models capable of learning patterns and dependencies in textual sequences.
+In this lab, YOLO is used to detect and classify objects in images by predicting **bounding boxes, class labels, and confidence scores**.
 
 ---
 
 ## Objectives
 
-• To understand the concept of **sequence modeling**
-• To implement **Recurrent Neural Networks (RNN)** for text classification
-• To understand the working of **Long Short-Term Memory (LSTM)** networks
-• To preprocess textual data for deep learning models
-• To evaluate the performance of sequential models on text data
+* To understand the concept of **object detection in computer vision**
+* To implement **YOLO (You Only Look Once) object detection**
+* To detect multiple objects within an image
+* To visualize bounding boxes around detected objects
+* To analyze detection confidence and classification results
 
 ---
 
-## Dataset
+## YOLO Algorithm
 
-The dataset used in this experiment consists of **text samples with corresponding class labels**.
-Each text input is processed and converted into sequences before being passed to the neural network.
+YOLO is a **single-stage object detection algorithm** that divides an image into a grid and predicts bounding boxes and class probabilities for each grid cell.
 
-Typical preprocessing steps include:
+Key components of YOLO include:
 
-* Text cleaning
-* Tokenization
-* Sequence padding
-* Vocabulary creation
+* **Bounding Box Prediction**
+  Determines the location of detected objects in the image.
+
+* **Confidence Score**
+  Indicates how confident the model is about the presence of an object.
+
+* **Class Probability**
+  Determines which object class is detected.
+
+YOLO performs detection in **one single neural network pass**, making it significantly faster than traditional object detection techniques.
 
 ---
 
 ## Libraries Used
 
-The following Python libraries are used:
+The following Python libraries are used in this experiment:
 
+* Python
+* OpenCV
 * NumPy
-* Pandas
 * Matplotlib
-* TensorFlow / Keras
-* Scikit-learn
-
----
-
-## Model Architecture
-
-The implemented models include:
-
-### 1. Recurrent Neural Network (RNN)
-
-Embedding Layer
-→ Simple RNN Layer
-→ Dense Layer
-→ Output Layer
-
-### 2. Long Short-Term Memory (LSTM)
-
-Embedding Layer
-→ LSTM Layer
-→ Dense Layer
-→ Output Layer
-
-LSTM networks improve upon basic RNNs by addressing the **vanishing gradient problem**, allowing them to capture long-term dependencies in text sequences.
+* PyTorch / YOLO framework
 
 ---
 
 ## Methodology
 
-### 1. Data Preprocessing
+### 1. Image Loading
 
-* Text cleaning and normalization
-* Tokenization using a tokenizer
-* Converting text into sequences
-* Padding sequences to equal length
+The input image is loaded using OpenCV and prepared for processing.
 
-### 2. Model Training
+### 2. Model Initialization
 
-The RNN and LSTM models are trained on the processed dataset using:
+A pre-trained **YOLO object detection model** is loaded.
 
-* Backpropagation through time
-* Optimization algorithms such as Adam
+### 3. Object Detection
 
-### 3. Model Evaluation
+The model processes the image and predicts:
 
-The models are evaluated using:
+* Bounding boxes
+* Class labels
+* Confidence scores
 
-* Training and validation accuracy
-* Loss curves
-* Prediction results
+### 4. Visualization
+
+Detected objects are displayed by drawing **bounding boxes and labels** around them in the image.
 
 ---
 
 ## Results
 
-The LSTM model generally performs better than the basic RNN due to its ability to retain long-term dependencies within sequences.
+The YOLO model successfully detects objects present in the image and highlights them using bounding boxes.
 
-Performance comparison highlights the advantages of LSTM networks for Natural Language Processing tasks.
+Each detected object is labeled with:
+
+* Object class name
+* Detection confidence score
+
+The results demonstrate the capability of YOLO to perform **fast and accurate real-time object detection**.
 
 ---
 
 ## Key Concepts Learned
 
-• Sequential data processing
-• Tokenization and word embeddings
-• Recurrent Neural Networks
-• Long Short-Term Memory networks
-• Handling vanishing gradient problems
-• Text classification using deep learning
+* Object detection in computer vision
+* YOLO architecture
+* Bounding box prediction
+* Confidence score calculation
+* Real-time detection systems
+* Visualization of detection results
+
+---
+
+## Applications of YOLO
+
+* Autonomous driving
+* Surveillance systems
+* Face detection
+* Traffic monitoring
+* Retail analytics
+* Robotics and automation
 
 ---
 
 ## Conclusion
 
-This experiment demonstrates how recurrent neural networks can be used to model sequential text data.
+This experiment demonstrates the implementation of **YOLO for object detection**, highlighting its ability to detect multiple objects efficiently within an image.
 
-The implementation highlights the importance of LSTM networks in capturing long-term dependencies in language, making them widely used in tasks such as sentiment analysis, text classification, and language modeling.
+YOLO’s real-time detection capability makes it one of the most widely used models in modern computer vision applications.
 
 ---
 
