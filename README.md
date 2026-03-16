@@ -1,91 +1,116 @@
-# DeepLearning Repository
+# Lab 3: Effect of L1, L2, and Elastic Net Regularization on Model Training
 
-This repository contains implementations of **Deep Learning laboratory experiments** completed as part of the academic curriculum.  
-The experiments focus on understanding **neural network fundamentals**, **training mechanisms**, and **performance analysis** using modern deep learning frameworks.
+## Overview
+
+This experiment demonstrates the implementation and comparison of different regularization techniques used in machine learning models. Regularization helps prevent overfitting by adding a penalty term to the loss function.
+
+In this lab, we implement and compare:
+
+* **Linear Regression**
+* **Ridge Regression (L2 Regularization)**
+* **Lasso Regression (L1 Regularization)**
+* **Elastic Net Regression (Combination of L1 and L2)**
+
+The models are trained and evaluated using performance metrics to observe how regularization affects model training and prediction.
 
 ---
 
 ## Objectives
 
-- To understand the fundamentals of **Deep Learning and Neural Networks**
-- To implement **Multi-Layer Perceptrons (MLP)** and **Deep Feedforward Neural Networks**
-- To study the role of **activation functions, loss functions, and optimizers**
-- To analyze the impact of **hyperparameters** such as learning rate, batch size, depth, and width
-- To gain practical experience using **PyTorch**, **Keras** and **TensorFlow**
+* To understand the concept of **regularization in machine learning**
+* To implement **Ridge, Lasso, and Elastic Net regression models**
+* To analyze the impact of regularization on model performance
+* To evaluate models using standard performance metrics
 
 ---
 
-## Laboratory Experiments
+## Libraries Used
 
-###  Lab 1: Learning XOR Boolean Function using MLP
-**Branch:** `Lab1`
+The following Python libraries are used in this experiment:
 
-**Description:**
-- Implementation of a **Multi-Layer Perceptron (MLP)** to learn the XOR Boolean function
-- Demonstrates why XOR is **not linearly separable**
-- Highlights the importance of **hidden layers** and **nonlinear activation functions**
-- Includes **hyperparameter tuning** and result analysis
-
-**Files:**
-- `MLP_XOR.ipynb`
-- `README.md` (theory, objective, and explanation)
+* Pandas
+* NumPy
+* Matplotlib
+* Scikit-learn
 
 ---
 
-###  Lab 2: Deep Feedforward Neural Network for Fashion-MNIST Classification
-**Branch:** `Lab2`
+## Dataset
 
-**Description:**
-- Design and implementation of a **deep feedforward neural network**
-- Classification of **Fashion-MNIST dataset**
-- Experiments performed on:
-  - Network depth and width
-  - Different activation functions (ReLU, Sigmoid, Tanh, Leaky ReLU)
-  - Training loss and test accuracy
-- Visualization of **hidden layer activations**
-- Performance comparison and analysis
+The dataset used in this experiment contains both **numerical and categorical features**.
+
+Data preprocessing steps include:
+
+* Handling categorical variables using **One Hot Encoding**
+* Feature scaling using **StandardScaler**
+* Splitting dataset into **training and testing sets**
 
 ---
 
-## 🛠 Technologies Used
+## Methodology
 
-- Python
-- PyTorch
-- TensorFlow
-- NumPy
-- Pandas
-- Matplotlib
-- Jupyter Notebook / Google Colab
+### 1. Data Preprocessing
 
----
+* Import dataset using Pandas
+* Separate features and target variable
+* Apply preprocessing using **ColumnTransformer**
+* Split dataset into training and testing sets
 
-## Key Concepts Covered
+### 2. Model Implementation
 
-- Feedforward Neural Networks
-- Multi-Layer Perceptron (MLP)
-- Backpropagation Algorithm
-- Gradient Descent Optimization
-- Cross-Entropy Loss
-- Activation Functions
-- Overfitting vs Generalization
-- Hyperparameter Tuning
-- Model Evaluation and Visualization
+The following regression models are implemented:
 
----
+* **Linear Regression**
+* **Ridge Regression (L2 Regularization)**
+* **Lasso Regression (L1 Regularization)**
+* **Elastic Net Regression (Combination of L1 and L2)**
 
-## Learning Outcomes
+### 3. Model Training
 
-Through these laboratory experiments, I gained:
-- Hands-on experience with deep learning model implementation
-- A strong understanding of neural network training workflows
-- The ability to analyze and compare model performance
-- Practical exposure to PyTorch and TensorFlow frameworks
+Each model is trained using the training dataset.
+
+### 4. Model Evaluation
+
+Models are evaluated using:
+
+* **Mean Squared Error (MSE)**
+* **R² Score**
+
+These metrics help measure prediction accuracy and model performance.
 
 ---
 
-##  Author
+## Evaluation Metrics
 
-**Samiksha Batra**  
-Deep Learning   
-Academic Project Repository
+### Mean Squared Error (MSE)
+
+Measures the average squared difference between actual and predicted values.
+
+### R² Score
+
+Represents how well the model explains the variance in the data.
+
+---
+
+## Observations
+
+* **Ridge Regression** helps reduce model complexity and prevents overfitting by shrinking coefficients.
+* **Lasso Regression** can shrink some coefficients to zero, effectively performing feature selection.
+* **Elastic Net** combines both L1 and L2 penalties, balancing feature selection and coefficient shrinkage.
+
+---
+
+## Conclusion
+
+Regularization techniques are essential for improving model generalization and preventing overfitting. In this experiment, Ridge, Lasso, and Elastic Net regression models were implemented and compared to analyze their impact on model performance.
+
+Elastic Net provides a balance between Ridge and Lasso, making it useful when dealing with datasets containing multiple correlated features.
+
+---
+
+## Author
+
+Samiksha Batra
+MSc Artificial Intelligence & Machine Learning
+
 
