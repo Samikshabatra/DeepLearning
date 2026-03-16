@@ -1,91 +1,145 @@
-# DeepLearning Repository
+# Lab 6: Image Classification using Transfer Learning
 
-This repository contains implementations of **Deep Learning laboratory experiments** completed as part of the academic curriculum.  
-The experiments focus on understanding **neural network fundamentals**, **training mechanisms**, and **performance analysis** using modern deep learning frameworks.
+## Overview
+
+This experiment demonstrates the use of **Transfer Learning** for image classification using a pre-trained Convolutional Neural Network (CNN).
+
+Training deep learning models from scratch requires large datasets and significant computational resources. Transfer learning solves this problem by using pre-trained models that have already learned useful features from large datasets such as ImageNet.
+
+In this lab, a pre-trained CNN model is used as a feature extractor and fine-tuned for a new image classification task.
 
 ---
 
 ## Objectives
 
-- To understand the fundamentals of **Deep Learning and Neural Networks**
-- To implement **Multi-Layer Perceptrons (MLP)** and **Deep Feedforward Neural Networks**
-- To study the role of **activation functions, loss functions, and optimizers**
-- To analyze the impact of **hyperparameters** such as learning rate, batch size, depth, and width
-- To gain practical experience using **PyTorch**, **Keras** and **TensorFlow**
+• To understand the concept of **Transfer Learning**
+• To utilize **pre-trained CNN models** for image classification
+• To perform **feature extraction using deep neural networks**
+• To fine-tune a pre-trained model for a specific dataset
+• To evaluate model performance in computer vision tasks
 
 ---
 
-## Laboratory Experiments
+## Transfer Learning Concept
 
-###  Lab 1: Learning XOR Boolean Function using MLP
-**Branch:** `Lab1`
+Transfer learning allows a model trained on one task to be reused for another related task.
 
-**Description:**
-- Implementation of a **Multi-Layer Perceptron (MLP)** to learn the XOR Boolean function
-- Demonstrates why XOR is **not linearly separable**
-- Highlights the importance of **hidden layers** and **nonlinear activation functions**
-- Includes **hyperparameter tuning** and result analysis
+Instead of training a deep neural network from scratch, we reuse the learned weights of a pre-trained network and adapt it for a new dataset.
 
-**Files:**
-- `MLP_XOR.ipynb`
-- `README.md` (theory, objective, and explanation)
+Advantages of transfer learning:
+
+* Faster training
+* Better performance with small datasets
+* Reduced computational cost
+* Improved feature extraction
 
 ---
 
-###  Lab 2: Deep Feedforward Neural Network for Fashion-MNIST Classification
-**Branch:** `Lab2`
+## Pre-trained Models
 
-**Description:**
-- Design and implementation of a **deep feedforward neural network**
-- Classification of **Fashion-MNIST dataset**
-- Experiments performed on:
-  - Network depth and width
-  - Different activation functions (ReLU, Sigmoid, Tanh, Leaky ReLU)
-  - Training loss and test accuracy
-- Visualization of **hidden layer activations**
-- Performance comparison and analysis
+Common CNN architectures used for transfer learning include:
+
+* VGG16
+* ResNet
+* MobileNet
+* Inception
+
+These models are trained on the **ImageNet dataset**, which contains millions of labeled images across thousands of categories.
 
 ---
 
-## 🛠 Technologies Used
+## Libraries Used
 
-- Python
-- PyTorch
-- TensorFlow
-- NumPy
-- Pandas
-- Matplotlib
-- Jupyter Notebook / Google Colab
+The following Python libraries are used in this experiment:
 
----
-
-## Key Concepts Covered
-
-- Feedforward Neural Networks
-- Multi-Layer Perceptron (MLP)
-- Backpropagation Algorithm
-- Gradient Descent Optimization
-- Cross-Entropy Loss
-- Activation Functions
-- Overfitting vs Generalization
-- Hyperparameter Tuning
-- Model Evaluation and Visualization
+* NumPy
+* Pandas
+* Matplotlib
+* TensorFlow / Keras
+* Scikit-learn
 
 ---
 
-## Learning Outcomes
+## Methodology
 
-Through these laboratory experiments, I gained:
-- Hands-on experience with deep learning model implementation
-- A strong understanding of neural network training workflows
-- The ability to analyze and compare model performance
-- Practical exposure to PyTorch and TensorFlow frameworks
+### 1. Data Preparation
+
+* Load image dataset
+* Resize images to match model input size
+* Normalize pixel values
+* Split dataset into training and testing sets
+
+### 2. Model Selection
+
+A **pre-trained CNN model** is loaded with pre-trained weights.
+
+The convolutional base of the network is used as a **feature extractor**.
+
+### 3. Model Modification
+
+* The top classification layers of the model are removed
+* New fully connected layers are added
+* The model is adapted to the new classification task
+
+### 4. Model Training
+
+The model is trained on the new dataset using transfer learning techniques.
+
+Training includes:
+
+* Freezing base layers
+* Fine-tuning selected layers
+* Optimizing using the Adam optimizer
+
+### 5. Model Evaluation
+
+The trained model is evaluated using:
+
+* Training accuracy
+* Validation accuracy
+* Loss curves
 
 ---
 
-##  Author
+## Results
 
-**Samiksha Batra**  
-Deep Learning   
-Academic Project Repository
+Transfer learning significantly improves model performance and reduces training time compared to training a CNN from scratch.
 
+The model successfully learns useful image features from the dataset and achieves good classification performance.
+
+Training and validation curves demonstrate stable learning behavior.
+
+---
+
+## Key Concepts Learned
+
+• Transfer learning in deep learning
+• Pre-trained CNN architectures
+• Feature extraction using convolutional networks
+• Fine-tuning deep neural networks
+• Image classification using deep learning
+
+---
+
+## Applications of Transfer Learning
+
+• Medical image analysis
+• Object detection
+• Face recognition
+• Autonomous driving
+• Image classification systems
+
+---
+
+## Conclusion
+
+This experiment demonstrates how transfer learning can efficiently adapt powerful pre-trained deep learning models for new image classification tasks.
+
+By leveraging previously learned features, transfer learning enables faster training and improved performance, making it one of the most widely used techniques in modern computer vision applications.
+
+---
+
+## Author
+
+Samiksha Batra
+MSc Artificial Intelligence & Machine Learning
