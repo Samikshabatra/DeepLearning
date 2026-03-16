@@ -29,7 +29,7 @@ Description:
 * Implementation of a **Multi-Layer Perceptron (MLP)** to learn the XOR Boolean function
 * Demonstrates why XOR is **not linearly separable**
 * Highlights the importance of **hidden layers** and **nonlinear activation functions**
-* Includes **hyperparameter tuning** and result analysis
+* Includes **hyperparameter tuning** and result analysis.
 
 Files:
 
