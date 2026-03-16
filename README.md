@@ -1,91 +1,128 @@
-# DeepLearning Repository
+# Lab 5: Autoencoder for Feature Learning and Dimensionality Reduction
 
-This repository contains implementations of **Deep Learning laboratory experiments** completed as part of the academic curriculum.  
-The experiments focus on understanding **neural network fundamentals**, **training mechanisms**, and **performance analysis** using modern deep learning frameworks.
+## Overview
+
+This experiment demonstrates the implementation of an **Autoencoder**, a neural network architecture used for unsupervised learning and dimensionality reduction.
+
+Autoencoders learn to compress input data into a lower-dimensional representation called a **latent space** and then reconstruct the original input from this compressed representation. The objective of the model is to minimize reconstruction loss.
+
+Autoencoders are widely used in applications such as data compression, anomaly detection, noise removal, and representation learning.
 
 ---
 
 ## Objectives
 
-- To understand the fundamentals of **Deep Learning and Neural Networks**
-- To implement **Multi-Layer Perceptrons (MLP)** and **Deep Feedforward Neural Networks**
-- To study the role of **activation functions, loss functions, and optimizers**
-- To analyze the impact of **hyperparameters** such as learning rate, batch size, depth, and width
-- To gain practical experience using **PyTorch**, **Keras** and **TensorFlow**
+• To understand the concept of **Autoencoders**
+• To implement an **encoder-decoder neural network architecture**
+• To learn compressed feature representations of data
+• To reconstruct input data using learned representations
+• To analyze reconstruction error and model performance
 
 ---
 
-## Laboratory Experiments
+## Autoencoder Architecture
 
-###  Lab 1: Learning XOR Boolean Function using MLP
-**Branch:** `Lab1`
+An Autoencoder consists of two main components:
 
-**Description:**
-- Implementation of a **Multi-Layer Perceptron (MLP)** to learn the XOR Boolean function
-- Demonstrates why XOR is **not linearly separable**
-- Highlights the importance of **hidden layers** and **nonlinear activation functions**
-- Includes **hyperparameter tuning** and result analysis
+### 1. Encoder
 
-**Files:**
-- `MLP_XOR.ipynb`
-- `README.md` (theory, objective, and explanation)
+The encoder compresses the input data into a lower-dimensional latent representation.
 
----
+Input Layer
+→ Dense Layer(s)
+→ Latent Representation
 
-###  Lab 2: Deep Feedforward Neural Network for Fashion-MNIST Classification
-**Branch:** `Lab2`
+### 2. Decoder
 
-**Description:**
-- Design and implementation of a **deep feedforward neural network**
-- Classification of **Fashion-MNIST dataset**
-- Experiments performed on:
-  - Network depth and width
-  - Different activation functions (ReLU, Sigmoid, Tanh, Leaky ReLU)
-  - Training loss and test accuracy
-- Visualization of **hidden layer activations**
-- Performance comparison and analysis
+The decoder reconstructs the original input from the compressed representation.
+
+Latent Representation
+→ Dense Layer(s)
+→ Output Layer (Reconstructed Input)
 
 ---
 
-## 🛠 Technologies Used
+## Libraries Used
 
-- Python
-- PyTorch
-- TensorFlow
-- NumPy
-- Pandas
-- Matplotlib
-- Jupyter Notebook / Google Colab
+The following Python libraries are used in this experiment:
 
----
-
-## Key Concepts Covered
-
-- Feedforward Neural Networks
-- Multi-Layer Perceptron (MLP)
-- Backpropagation Algorithm
-- Gradient Descent Optimization
-- Cross-Entropy Loss
-- Activation Functions
-- Overfitting vs Generalization
-- Hyperparameter Tuning
-- Model Evaluation and Visualization
+* NumPy
+* Pandas
+* Matplotlib
+* TensorFlow / Keras
+* Scikit-learn
 
 ---
 
-## Learning Outcomes
+## Methodology
 
-Through these laboratory experiments, I gained:
-- Hands-on experience with deep learning model implementation
-- A strong understanding of neural network training workflows
-- The ability to analyze and compare model performance
-- Practical exposure to PyTorch and TensorFlow frameworks
+### 1. Data Preprocessing
+
+* Loading the dataset
+* Normalizing input features
+* Splitting data into training and testing sets
+
+### 2. Model Design
+
+The autoencoder network consists of:
+
+Encoder:
+
+* Input layer
+* Hidden layers
+* Latent representation layer
+
+Decoder:
+
+* Hidden layers
+* Reconstruction layer
+
+### 3. Model Training
+
+The model is trained to minimize **reconstruction loss**, typically measured using Mean Squared Error (MSE).
+
+Optimization is performed using the **Adam optimizer**.
+
+### 4. Model Evaluation
+
+The performance of the autoencoder is evaluated by comparing:
+
+* Original input data
+* Reconstructed output data
+
+Reconstruction error indicates how well the model has learned the underlying data structure.
 
 ---
 
-##  Author
+## Results
 
-**Samiksha Batra**  
-Deep Learning   
-Academic Project Repository
+The autoencoder successfully learns compressed representations of the input data.
 
+The reconstructed outputs closely resemble the original inputs, indicating that the model effectively captures important features within the dataset.
+
+Visualization of reconstruction results demonstrates the capability of autoencoders to preserve key information while reducing dimensionality.
+
+---
+
+## Applications of Autoencoders
+
+• Dimensionality reduction
+• Anomaly detection
+• Image denoising
+• Data compression
+• Feature extraction for machine learning models
+
+---
+
+## Conclusion
+
+This experiment demonstrates how Autoencoders can learn meaningful feature representations from data without supervision.
+
+By compressing and reconstructing input data, autoencoders capture important structures within the dataset, making them valuable tools in deep learning and representation learning tasks.
+
+---
+
+## Author
+
+Samiksha Batra
+MSc Artificial Intelligence & Machine Learning
