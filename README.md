@@ -1,91 +1,127 @@
-# DeepLearning Repository
+# Lab 4.2: Text Classification using RNN and LSTM
 
-This repository contains implementations of **Deep Learning laboratory experiments** completed as part of the academic curriculum.  
-The experiments focus on understanding **neural network fundamentals**, **training mechanisms**, and **performance analysis** using modern deep learning frameworks.
+## Overview
+
+This experiment demonstrates the implementation of Recurrent Neural Networks (RNN) and Long Short-Term Memory (LSTM) networks for text classification tasks.
+
+Unlike traditional machine learning models, recurrent neural networks are designed to handle **sequential data**, making them particularly useful for Natural Language Processing (NLP) applications.
+
+In this lab, text data is preprocessed, converted into numerical sequences, and used to train RNN/LSTM models capable of learning patterns and dependencies in textual sequences.
 
 ---
 
 ## Objectives
 
-- To understand the fundamentals of **Deep Learning and Neural Networks**
-- To implement **Multi-Layer Perceptrons (MLP)** and **Deep Feedforward Neural Networks**
-- To study the role of **activation functions, loss functions, and optimizers**
-- To analyze the impact of **hyperparameters** such as learning rate, batch size, depth, and width
-- To gain practical experience using **PyTorch**, **Keras** and **TensorFlow**
+• To understand the concept of **sequence modeling**
+• To implement **Recurrent Neural Networks (RNN)** for text classification
+• To understand the working of **Long Short-Term Memory (LSTM)** networks
+• To preprocess textual data for deep learning models
+• To evaluate the performance of sequential models on text data
 
 ---
 
-## Laboratory Experiments
+## Dataset
 
-###  Lab 1: Learning XOR Boolean Function using MLP
-**Branch:** `Lab1`
+The dataset used in this experiment consists of **text samples with corresponding class labels**.
+Each text input is processed and converted into sequences before being passed to the neural network.
 
-**Description:**
-- Implementation of a **Multi-Layer Perceptron (MLP)** to learn the XOR Boolean function
-- Demonstrates why XOR is **not linearly separable**
-- Highlights the importance of **hidden layers** and **nonlinear activation functions**
-- Includes **hyperparameter tuning** and result analysis
+Typical preprocessing steps include:
 
-**Files:**
-- `MLP_XOR.ipynb`
-- `README.md` (theory, objective, and explanation)
+* Text cleaning
+* Tokenization
+* Sequence padding
+* Vocabulary creation
 
 ---
 
-###  Lab 2: Deep Feedforward Neural Network for Fashion-MNIST Classification
-**Branch:** `Lab2`
+## Libraries Used
 
-**Description:**
-- Design and implementation of a **deep feedforward neural network**
-- Classification of **Fashion-MNIST dataset**
-- Experiments performed on:
-  - Network depth and width
-  - Different activation functions (ReLU, Sigmoid, Tanh, Leaky ReLU)
-  - Training loss and test accuracy
-- Visualization of **hidden layer activations**
-- Performance comparison and analysis
+The following Python libraries are used:
+
+* NumPy
+* Pandas
+* Matplotlib
+* TensorFlow / Keras
+* Scikit-learn
 
 ---
 
-## 🛠 Technologies Used
+## Model Architecture
 
-- Python
-- PyTorch
-- TensorFlow
-- NumPy
-- Pandas
-- Matplotlib
-- Jupyter Notebook / Google Colab
+The implemented models include:
 
----
+### 1. Recurrent Neural Network (RNN)
 
-## Key Concepts Covered
+Embedding Layer
+→ Simple RNN Layer
+→ Dense Layer
+→ Output Layer
 
-- Feedforward Neural Networks
-- Multi-Layer Perceptron (MLP)
-- Backpropagation Algorithm
-- Gradient Descent Optimization
-- Cross-Entropy Loss
-- Activation Functions
-- Overfitting vs Generalization
-- Hyperparameter Tuning
-- Model Evaluation and Visualization
+### 2. Long Short-Term Memory (LSTM)
+
+Embedding Layer
+→ LSTM Layer
+→ Dense Layer
+→ Output Layer
+
+LSTM networks improve upon basic RNNs by addressing the **vanishing gradient problem**, allowing them to capture long-term dependencies in text sequences.
 
 ---
 
-## Learning Outcomes
+## Methodology
 
-Through these laboratory experiments, I gained:
-- Hands-on experience with deep learning model implementation
-- A strong understanding of neural network training workflows
-- The ability to analyze and compare model performance
-- Practical exposure to PyTorch and TensorFlow frameworks
+### 1. Data Preprocessing
+
+* Text cleaning and normalization
+* Tokenization using a tokenizer
+* Converting text into sequences
+* Padding sequences to equal length
+
+### 2. Model Training
+
+The RNN and LSTM models are trained on the processed dataset using:
+
+* Backpropagation through time
+* Optimization algorithms such as Adam
+
+### 3. Model Evaluation
+
+The models are evaluated using:
+
+* Training and validation accuracy
+* Loss curves
+* Prediction results
 
 ---
 
-##  Author
+## Results
 
-**Samiksha Batra**  
-Deep Learning   
-Academic Project Repository
+The LSTM model generally performs better than the basic RNN due to its ability to retain long-term dependencies within sequences.
 
+Performance comparison highlights the advantages of LSTM networks for Natural Language Processing tasks.
+
+---
+
+## Key Concepts Learned
+
+• Sequential data processing
+• Tokenization and word embeddings
+• Recurrent Neural Networks
+• Long Short-Term Memory networks
+• Handling vanishing gradient problems
+• Text classification using deep learning
+
+---
+
+## Conclusion
+
+This experiment demonstrates how recurrent neural networks can be used to model sequential text data.
+
+The implementation highlights the importance of LSTM networks in capturing long-term dependencies in language, making them widely used in tasks such as sentiment analysis, text classification, and language modeling.
+
+---
+
+## Author
+
+Samiksha Batra
+MSc Artificial Intelligence & Machine Learning
