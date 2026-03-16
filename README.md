@@ -1,91 +1,137 @@
-# DeepLearning Repository
+# Lab 4: CNN from Scratch for CIFAR-10 Image Classification
 
-This repository contains implementations of **Deep Learning laboratory experiments** completed as part of the academic curriculum.  
-The experiments focus on understanding **neural network fundamentals**, **training mechanisms**, and **performance analysis** using modern deep learning frameworks.
+## Overview
+This experiment demonstrates the implementation of a Convolutional Neural Network (CNN) from scratch using NumPy for image classification tasks. The model is trained and evaluated using the CIFAR-10 dataset.
+
+The goal of this lab is to understand the internal workings of convolutional neural networks by manually implementing the core building blocks such as convolution layers, pooling layers, activation functions, and fully connected layers.
 
 ---
 
 ## Objectives
 
-- To understand the fundamentals of **Deep Learning and Neural Networks**
-- To implement **Multi-Layer Perceptrons (MLP)** and **Deep Feedforward Neural Networks**
-- To study the role of **activation functions, loss functions, and optimizers**
-- To analyze the impact of **hyperparameters** such as learning rate, batch size, depth, and width
-- To gain practical experience using **PyTorch**, **Keras** and **TensorFlow**
+• To understand the architecture of Convolutional Neural Networks (CNNs)  
+• To implement convolution and pooling operations from scratch  
+• To train a CNN model for image classification  
+• To evaluate model performance using training metrics  
+• To gain deeper insight into how CNNs process image data  
 
 ---
 
-## Laboratory Experiments
+## Dataset
 
-###  Lab 1: Learning XOR Boolean Function using MLP
-**Branch:** `Lab1`
+The experiment uses the **CIFAR-10 dataset**, which contains 60,000 images across 10 different classes.
 
-**Description:**
-- Implementation of a **Multi-Layer Perceptron (MLP)** to learn the XOR Boolean function
-- Demonstrates why XOR is **not linearly separable**
-- Highlights the importance of **hidden layers** and **nonlinear activation functions**
-- Includes **hyperparameter tuning** and result analysis
+Each image has a size of **32 × 32 pixels with 3 color channels (RGB).**
 
-**Files:**
-- `MLP_XOR.ipynb`
-- `README.md` (theory, objective, and explanation)
+The dataset includes the following classes:
 
----
-
-###  Lab 2: Deep Feedforward Neural Network for Fashion-MNIST Classification
-**Branch:** `Lab2`
-
-**Description:**
-- Design and implementation of a **deep feedforward neural network**
-- Classification of **Fashion-MNIST dataset**
-- Experiments performed on:
-  - Network depth and width
-  - Different activation functions (ReLU, Sigmoid, Tanh, Leaky ReLU)
-  - Training loss and test accuracy
-- Visualization of **hidden layer activations**
-- Performance comparison and analysis
+- Airplane
+- Automobile
+- Bird
+- Cat
+- Deer
+- Dog
+- Frog
+- Horse
+- Ship
+- Truck
 
 ---
 
-## 🛠 Technologies Used
+## Libraries Used
 
-- Python
-- PyTorch
-- TensorFlow
+The following Python libraries are used in this experiment:
+
 - NumPy
 - Pandas
 - Matplotlib
-- Jupyter Notebook / Google Colab
+- PIL (Python Imaging Library)
+- KaggleHub (for dataset download)
 
 ---
 
-## Key Concepts Covered
+## CNN Architecture
 
-- Feedforward Neural Networks
-- Multi-Layer Perceptron (MLP)
-- Backpropagation Algorithm
-- Gradient Descent Optimization
-- Cross-Entropy Loss
-- Activation Functions
-- Overfitting vs Generalization
-- Hyperparameter Tuning
-- Model Evaluation and Visualization
+The implemented CNN architecture consists of the following layers:
+
+Conv(3 → 32, 3×3) → BatchNorm → ReLU  
+Conv(32 → 32, 3×3) → BatchNorm → ReLU  
+MaxPooling → Dropout  
+
+Conv(32 → 64, 3×3) → BatchNorm → ReLU  
+Conv(64 → 64, 3×3) → BatchNorm → ReLU  
+MaxPooling → Dropout  
+
+Conv(64 → 128, 3×3) → BatchNorm → ReLU  
+MaxPooling → Dropout  
+
+Flatten Layer  
+
+Fully Connected Layer (2048 → 512)  
+BatchNorm → ReLU → Dropout  
+
+Output Layer (512 → 10)
 
 ---
 
-## Learning Outcomes
+## Methodology
 
-Through these laboratory experiments, I gained:
-- Hands-on experience with deep learning model implementation
-- A strong understanding of neural network training workflows
-- The ability to analyze and compare model performance
-- Practical exposure to PyTorch and TensorFlow frameworks
+### 1. Data Loading
+The CIFAR-10 dataset is downloaded and images are loaded into memory for training and testing.
+
+### 2. Data Preprocessing
+Images are resized and normalized before being fed into the CNN model.
+
+### 3. Model Implementation
+A convolutional neural network is implemented from scratch using NumPy, including:
+
+- Convolution layers
+- ReLU activation
+- Batch Normalization
+- Max Pooling
+- Dropout
+- Fully Connected Layers
+
+### 4. Model Training
+The model is trained using mini-batch gradient descent with multiple epochs.
+
+### 5. Model Evaluation
+The performance of the CNN is evaluated using training loss and prediction accuracy.
 
 ---
 
-##  Author
+## Results
 
-**Samiksha Batra**  
-Deep Learning   
-Academic Project Repository
+The CNN model successfully learns image features through convolution operations and gradually reduces training loss during epochs.
 
+Visualizations include:
+
+- Training loss curve
+- Prediction outputs
+- Model performance plots
+
+---
+
+## Key Concepts Learned
+
+• Convolution operations in CNN  
+• Feature extraction from images  
+• Pooling and dimensionality reduction  
+• Regularization using dropout  
+• Batch normalization for stable training  
+• End-to-end CNN training pipeline  
+
+---
+
+## Conclusion
+
+This experiment demonstrates how Convolutional Neural Networks work internally by implementing each component from scratch.
+
+The lab provides a strong conceptual understanding of how deep learning models process image data and how CNN architectures are designed for computer vision tasks.
+
+---
+
+## Author
+
+Samiksha Batra  
+MSc Artificial Intelligence & Machine Learning
